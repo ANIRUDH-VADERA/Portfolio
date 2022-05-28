@@ -26,30 +26,37 @@ function Navbar() {
         window.addEventListener('scroll', onScroll, { passive: true });
         return () => window.removeEventListener('scroll', onScroll);
     }, []);
-  
-  
-    // useEffect(() => {
-    //     const headerLogo = document.querySelector(".headerLogo");
-    //     const navbarHeadingMain = document.querySelector(".navbarHeadingMain");
-    //     const onLoad = () => {
-    //         headerLogo.classList.add("new");
-    //         navbarHeadingMain.classList.remove("none");
-    //     };
-    //     // clean up code
-    //     window.removeEventListener('load', onLoad);
-    //     window.addEventListener('load', onLoad, { passive: true });
-    //     return () => window.removeEventListener('load', onLoad);
-    // }, []);
+
+
+
+    useEffect(() => {
+        const headerLogo = document.querySelector(".headerLogo");
+        const navbarHeadingMain = document.querySelector(".navbarHeadingMain");
+        const onLoad = () => {
+            setTimeout(()=>{
+                headerLogo.classList.add("new");
+            },500);
+            setTimeout(() => {           
+            navbarHeadingMain.classList.remove("none");
+            navbarHeadingMain.classList.add("show");
+         },1000)
+
+        };
+        // clean up code
+        window.removeEventListener('load', onLoad);
+        window.addEventListener('load', onLoad, { passive: true });
+        return () => window.removeEventListener('load', onLoad);
+    }, []);
 
     return (
     <>
         <div className="navbarLogo">
-            <img alt="navbar_img" class="headerLogo" src = {navbarLogo} />
-            <h1 className="navbarHeadingMain none">ANIRUDH VADERA</h1>
+            <img alt="navbar_img" className="headerLogo" src = {navbarLogo} />
+            <h1 className="navbarHeadingMain none">HI</h1>
         </div>
         <div className="navbar" id="navbar">
                 <div className="navbarItemLogo logo">
-                    <a href="#"><img alt="navbar_img" src = {navbarLogo} /></a>
+                    <img alt="navbar_img" src = {navbarLogo} />
                 </div>
                 <div className="navbarItems">
                     <div className="navbarItem"><a href="#"><h2 className="navbarHeading">Home</h2></a></div>

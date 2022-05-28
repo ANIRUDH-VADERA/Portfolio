@@ -5,29 +5,30 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: -1 !important;
+    transition: all 0.3s linear;
 }
 
 .navbarLogo img{
     height : 10vh;
     width : 5vw;
     border-radius : 15px;
+    z-index : 1;
+    position : absolute;
+    transition: all 1s linear;
 }
 
 .navbarHeadingMain{
     color: var(--grey_main);
     margin-left : 2vw;
     font-family: 'Roboto', sans-serif;
-    text-shadow: 1px 3px 0 rgba(255 255 255 / 20%);
+    text-shadow: 1px 2px 0 rgba(255 255 255 / 20%);
     font-size : 1.7rem;
-    transition: all 1s ease-in-out;
-    
+    transition: all 0.3s linear;
 }
 
 /* Main Navbar */
 
 .navbarHeading{
-    color: var(--grey_main);
     font-family: 'League Spartan', sans-serif;
     font-size : 1.4rem;
     transition: all 0.5s ease-in-out;
@@ -39,8 +40,8 @@
     justify-content: center;
     align-items: center;
     width: 100vw;
-    transition: all 0.5s ease-in-out;
     z-index: 1;
+    padding: 10px 0;
 }  
 
 .navbar img{
@@ -55,7 +56,7 @@
     margin-right: auto;
     max-width: 0;
     overflow: hidden;
-    transition: all 0.8s ease-in-out;
+    transition: all 0.7s ease-in-out;
 }
 
 .navbarItems{
@@ -69,23 +70,45 @@
     margin-left: auto;
 }
 .navbarItem{
+    transform: translateX(100rem);
     display: flex;
     flex: 1;
     text-align: center;
     justify-content: center;
     align-items: center;
     padding: 5px 0;
+    position : relative;
+    animation : slideIn 0.5s forwards ease-in-out;
 }
-a{
-    text-decoration: none;
-    transition: 0.5s linar;
+
+.navbarItem:nth-child(1){
+    animation-delay : 0s ;
 }
+
+.navbarItem:nth-child(2){
+    animation-delay : 0.4s ;
+}
+
+.navbarItem:nth-child(3){
+    animation-delay : 0.8s ;
+}
+
+.navbarItem:nth-child(4){
+    animation-delay :  1.2s ;
+}
+
+.navbarItem:nth-child(5){
+    animation-delay :  1.6s ;
+}
+
 
 
 body.fixed-nav #navbar {
     position: fixed;
     background-color:  var(--black_sub);
     box-shadow: 0 1px 2px rgb(0 0 0 / 20%);
+    padding: 0;
+    transition: all 0.6s ease-in-out;
 }
 
 body.fixed-nav .navbarItems{
@@ -97,7 +120,73 @@ body.fixed-nav .logo {
     max-width: 10vw;
 }
 
+.navbar a{
+    color: var(--grey_main);
+    text-decoration: none;
+    transition: all 0.5s linear;
+    transition: color 0.1s linear;
+}
+
+.navbar a::before,.navbar a::after{
+    content : "";
+    position : absolute;
+    width : 100%;
+    height : 2px;
+    background-color :  var(--blue_sub);
+    left : 0;
+    transform : scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar a::before{
+    top:0;
+    transform-origin: left;
+}
+
+.navbar a::after{
+    bottom:0;
+    transform-origin: right;
+}
+
+.navbar a:hover::before,.navbar a:hover::after{
+    transform : scaleX(1);
+}
+
+.navbar a:hover{
+    color :  var(--blue_main);
+    transition: all 0.1s linear; 
+}
+
+
 .none{
     display: none;
-    transition: all 1s ease-in-out;
+    animation : slideIn 0.5s ease-in-out;
+}
+
+.show{
+    display: show;
+    transform : translateX(-30px);
+    animation : slideIn 0.7s forwards ease-in-out;
+}
+
+.new{
+    animation : slideOut 0.6s forwards ease-in-out;
+}
+
+@keyframes slideIn {
+    from{
+
+    }
+    to{
+        transform : translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    from{
+
+    }
+    to{
+        transform : translateX(-50px);
+    }
 }

@@ -1,13 +1,16 @@
 import './App.css';
-import React from "react";
+import React,{useEffect} from "react";
 
 import Navbar from "./Components/Navbar/Navbar.js"
-
+import CustomCursor from "./CustomCursor";
 function App() {
-  return (
-    <div className="App">
-      <Navbar />
-    </div>
+   return (
+     <>
+      {/* <CustomCursor /> */}
+      <div className="App">
+        <Navbar />
+      </div>
+    </>
   );
 }
 
