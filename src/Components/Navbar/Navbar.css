@@ -1,0 +1,103 @@
+/* Header */
+
+.navbarLogo{
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1 !important;
+}
+
+.navbarLogo img{
+    height : 10vh;
+    width : 5vw;
+    border-radius : 15px;
+}
+
+.navbarHeadingMain{
+    color: var(--grey_main);
+    margin-left : 2vw;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 1px 3px 0 rgba(255 255 255 / 20%);
+    font-size : 1.7rem;
+    transition: all 1s ease-in-out;
+    
+}
+
+/* Main Navbar */
+
+.navbarHeading{
+    color: var(--grey_main);
+    font-family: 'League Spartan', sans-serif;
+    font-size : 1.4rem;
+    transition: all 0.5s ease-in-out;
+}
+
+.navbar{
+    display: flex;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    transition: all 0.5s ease-in-out;
+    z-index: 1;
+}  
+
+.navbar img{
+    height : 8vh;
+    width : 4vw;
+    border-radius : 20px;
+    max-width: 4vw;
+}
+
+.navbarItemLogo{
+    margin-left: 6vw;
+    margin-right: auto;
+    max-width: 0;
+    overflow: hidden;
+    transition: all 0.8s ease-in-out;
+}
+
+.navbarItems{
+    transform : translateX(-20vw);
+    transition: all 0.6s ease-in-out;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width : 50vw;
+    margin-right: 6vw;
+    margin-left: auto;
+}
+.navbarItem{
+    display: flex;
+    flex: 1;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0;
+}
+a{
+    text-decoration: none;
+    transition: 0.5s linar;
+}
+
+
+body.fixed-nav #navbar {
+    position: fixed;
+    background-color:  var(--black_sub);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 20%);
+}
+
+body.fixed-nav .navbarItems{
+    transform : translateX(0vw);
+    transition: all 0.6s ease-in-out;
+}
+
+body.fixed-nav .logo {
+    max-width: 10vw;
+}
+
+.none{
+    display: none;
+    transition: all 1s ease-in-out;
+}
