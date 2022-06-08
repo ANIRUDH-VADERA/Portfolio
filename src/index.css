@@ -15,7 +15,7 @@ font-family: 'Roboto', sans-serif; */
 body {
   margin: 0;
   /* cursor: none; */
-  background-color: var(--black_main);
+  background-color: black;
   height: 200vh;
   width: 100vw;
   overflow-x: hidden;
