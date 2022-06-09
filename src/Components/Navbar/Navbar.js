@@ -1,10 +1,8 @@
 import React, { useEffect,useState } from 'react'
 import "./Navbar.css"
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
 import navbarLogo from "../../images/logo.jpg"
 
-function Navbar() {
+function Navbar(props) {
   
     var [firstTime,setFirstTime] = useState(true);
 
@@ -15,12 +13,14 @@ function Navbar() {
         const navbarHeadingMain = document.querySelector(".navbarHeadingMain");
         const onScroll = () => {
             if(window.scrollY >= NavTop){
+                props.setDown(true);
                 setFirstTime(false);
                 document.body.style.paddingTop = nav.offsetHeight + "px";
                 document.body.classList.add("fixed-nav");
                 headerLogo.classList.add("none1");
                 navbarHeadingMain.classList.add("none1");
               }else {
+                props.setDown(false);
                 document.body.style.paddingTop = 0;
                 document.body.classList.remove("fixed-nav");
                 headerLogo.classList.remove("none1");
@@ -71,7 +71,6 @@ function Navbar() {
                     <div className="navbarItem"><a href="#"><h2 className="navbarHeading">Skills</h2></a></div>
                   <div className="navbarItem"><a href="#"><h2 className="navbarHeading">Contact</h2></a></div>
                 </div>
-            {/* <FontAwesomeIcon icon={solid('house')} /> */}
         </div>
     </>
   )

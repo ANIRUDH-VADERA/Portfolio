@@ -123,6 +123,7 @@ body.fixed-nav .logo {
 
 .navbar a{
     color: var(--grey_main);
+    cursor: none;
     text-decoration: none;
     transition: all 0.5s linear;
     transition: color 0.1s linear;

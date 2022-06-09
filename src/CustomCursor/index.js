@@ -3,7 +3,7 @@ import "./style.css";
 // import CustomCursorContext from "./context/CustomCursorContext";
 
 // TODO: Hide if cursor not moved
-const CustomCursor = () => {
+const CustomCursor = (props) => {
   // const { type } = useContext(CustomCursorContext);
   const secondaryCursor = React.useRef(null);
   const positionRef = React.useRef({
@@ -21,7 +21,13 @@ const CustomCursor = () => {
       const { clientX, clientY } = event;
 
       const mouseX = clientX;
-      const mouseY = clientY;
+      var mouseY = clientY;
+      if(props.down===false){
+        mouseY = clientY;
+      }
+      else{
+        mouseY = clientY - 85;
+      }
 
       positionRef.current.mouseX =
         mouseX - secondaryCursor.current.clientWidth / 2;
@@ -30,7 +36,7 @@ const CustomCursor = () => {
     });
 
     return () => {};
-  }, []);
+  }, [props.down]);
 
   React.useEffect(() => {
     const followMouse = () => {
