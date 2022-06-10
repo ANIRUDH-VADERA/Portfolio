@@ -1,0 +1,65 @@
+.btn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 90px;
+    background: transparent;
+    margin: 10px;
+    border-radius: 30%;
+    color: var(--blue_main);
+    overflow: hidden;
+    position: relative;
+    border: 2px solid var(--blue_main);
+}
+.btn i{
+    font-size: 30px;
+    transition: 0.2s linear;
+}
+.btn:hover i{
+    transform: scale(1.2);
+    color: var(--grey_main);
+    transition: 0.2s ease-in-out;
+}
+
+.btn h4{
+    color: var(--blue_main);
+    font-size: 12px;
+    font-family: 'League Spartan', sans-serif;
+}
+
+.btn:hover h4{
+    transform: scale(1.2);
+    color: var(--grey_main);
+    transition: 0.2s ease-in-out
+}
+
+
+.btn::before{
+    content: "";
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    background: var(--blue_main);
+    transform: rotate(45deg);
+    left: -110%;
+    top: 90%;
+}
+.btn:hover::before{
+    animation: aaa 0.7s 1;
+    top: -10%;
+    left: -10%;
+}
+@keyframes aaa {
+    0%{
+        left: -110%;
+        top: 90%;
+    }50%{
+        left: 10%;
+        top: -30%;
+    }100%{
+        top: -10%;
+        left: -10%;
+    }
+}

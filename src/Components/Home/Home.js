@@ -1,10 +1,8 @@
 import Parallax from 'parallax-js'
 import Typed from "typed.js";
+import Button from "../Buttons/Button.js";
 import 'font-awesome/css/font-awesome.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faFacebook } from '@fortawesome/free-brands-svg-icons'
-// import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
 import React, { useEffect }  from 'react'
 import "./Home.css"
 import bgImg from "../../images/background.png"
@@ -12,6 +10,7 @@ import rockImg from "../../images/rock.png";
 import earthImg from "../../images/earth.png";
 import midImg from "../../images/mid.png";
 import foreImg from "../../images/foreground.png";;
+
 
 function Home() {
 
@@ -26,7 +25,7 @@ function Home() {
         ' CS ENGINEER',
         ' WEEB',
         ' WEB DEVELOPER',
-        ' LOVER OF WEB SERIES',
+        ' BINGE WATCHER',
         ' NIGHT CODER'
       ],
       startDelay: 300,
@@ -82,45 +81,46 @@ function Home() {
       </div>
       <div className="right">
             <div className="wrapper socialMedia">
-              <div className="button">
-                  <div className="icon">
+              <a href="https://www.facebook.com/anirudh.vadera.7/"><div className="button">
+                  <div className="icon icon1">
                     <i className="fa-brands fa-facebook-f"></i>
                   </div>
                   <span>Facebook</span>
-              </div>
-              <div className="button">
-                  <div className="icon">
+              </div></a>
+              <a href="https://twitter.com/vadera_anirudh"><div className="button">
+                  <div className="icon icon2">
                     <i className="fa-brands fa-twitter"></i>
                   </div>
                   <span>Twitter</span>
-              </div>
-              <div className="button">
-                  <div className="icon">
+              </div></a>
+              <a href="https://www.instagram.com/anirudhvadera/"><div className="button">
+                  <div className="icon icon3">
                     <i className="fa-brands fa-instagram"></i>
                   </div>
                   <span>Instagram</span>
-              </div>
-              <div className="button">
-                  <div className="icon">
+              </div></a>
+              <a href="https://github.com/ANIRUDH-VADERA"><div className="button">
+                  <div className="icon icon4">
                     <i className="fa-brands fa-github"></i>
                   </div>
                   <span>Github</span>
-              </div>
-              <div className="button">
-                  <div className="icon">
-                    <i class="fa-brands fa-linkedin"></i>
+              </div></a>
+              <a href="https://www.linkedin.com/in/anirudh-vadera-8836ba237/"><div className="button">
+                  <div className="icon icon5">
+                    <i className="fa-brands fa-linkedin"></i>
                   </div>
                   <span>Linkedin</span>
-              </div>     
-              <div className="button">
-                  <div className="icon">
+              </div>  </a>   
+              <a href="https://steamcommunity.com/id/BooGEYMaN___/"><div className="button">
+                  <div className="icon icon6">
                     <i className="fa-brands fa-steam"></i>
                   </div>
                   <span>Steam</span>
-              </div>
+              </div></a>
             </div>
             <div className="nextButtons">
-
+              <Button title="CONTACT ME" icon="fa-brands fa-rocketchat"/>
+              <Button title="KNOW MORE" icon="fa-solid fa-address-card"/>
             </div>
           </div>
     </section>

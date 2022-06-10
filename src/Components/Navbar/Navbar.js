@@ -52,7 +52,7 @@ function Navbar(props) {
         window.removeEventListener('load', onLoad);
         window.addEventListener('load', onLoad, { passive: true });
         return () => window.removeEventListener('load', onLoad);
-    }, []);
+    }, [props.preLoader]);
 
     return (
     <>
@@ -65,7 +65,7 @@ function Navbar(props) {
                     <img alt="navbar_img" src = {navbarLogo} />
                 </div>
                 <div className="navbarItems">
-                    <div className="navbarItem"><a href="#"><h2 className="navbarHeading">Home</h2></a></div>
+                    <div className="navbarItem"><a href="#sectionone"><h2 className="navbarHeading">Home</h2></a></div>
                     <div className="navbarItem"><a href="#"><h2 className="navbarHeading">About</h2></a></div>
                     <div className="navbarItem"><a href="#"><h2 className="navbarHeading">Projects</h2></a></div>
                     <div className="navbarItem"><a href="#"><h2 className="navbarHeading">Skills</h2></a></div>
