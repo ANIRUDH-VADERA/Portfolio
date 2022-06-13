@@ -1,10 +1,3 @@
-section {
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-    position: relative;
-}
-
 .bg img {
     width: 110vw;
     height: 110vh;
@@ -99,16 +92,8 @@ section {
 
 .screen .socialMedia{
     position: absolute;
-    top: 28vh;
+    top: 36vh;
     left : 61vw;
-}
-
-.screen .nextButtons{
-    position: absolute;
-    top: 38vh;
-    left : 60.5vw;
-    width: 30vw;
-    display: flex;
 }
 
 

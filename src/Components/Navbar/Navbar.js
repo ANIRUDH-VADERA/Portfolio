@@ -6,32 +6,32 @@ function Navbar(props) {
   
     var [firstTime,setFirstTime] = useState(true);
 
-    useEffect(() => {
-        const nav = document.querySelector(".navbar");
-        const NavTop = nav.offsetTop;
-        const headerLogo = document.querySelector(".headerLogo");
-        const navbarHeadingMain = document.querySelector(".navbarHeadingMain");
-        const onScroll = () => {
-            if(window.scrollY >= NavTop){
-                props.setDown(true);
-                setFirstTime(false);
-                document.body.style.paddingTop = nav.offsetHeight + "px";
-                document.body.classList.add("fixed-nav");
-                headerLogo.classList.add("none1");
-                navbarHeadingMain.classList.add("none1");
-              }else {
-                props.setDown(false);
-                document.body.style.paddingTop = 0;
-                document.body.classList.remove("fixed-nav");
-                headerLogo.classList.remove("none1");
-                navbarHeadingMain.classList.remove("none1");
-            }
-        };
-        // clean up code
-        window.removeEventListener('scroll', onScroll);
-        window.addEventListener('scroll', onScroll, { passive: true });
-        return () => window.removeEventListener('scroll', onScroll);
-    }, []);
+    // useEffect(() => {
+    //     const nav = document.querySelector(".navbar");
+    //     const NavTop = nav.offsetTop;
+    //     const headerLogo = document.querySelector(".headerLogo");
+    //     const navbarHeadingMain = document.querySelector(".navbarHeadingMain");
+    //     const onScroll = () => {
+    //         if(window.scrollY >= NavTop){
+    //             props.setDown(true);
+    //             setFirstTime(false);
+    //             document.body.style.paddingTop = nav.offsetHeight + "px";
+    //             document.body.classList.add("fixed-nav");
+    //             headerLogo.classList.add("none1");
+    //             navbarHeadingMain.classList.add("none1");
+    //           }else {
+    //             props.setDown(false);
+    //             document.body.style.paddingTop = 0;
+    //             document.body.classList.remove("fixed-nav");
+    //             headerLogo.classList.remove("none1");
+    //             navbarHeadingMain.classList.remove("none1");
+    //         }
+    //     };
+    //     // clean up code
+    //     window.removeEventListener('scroll', onScroll);
+    //     window.addEventListener('scroll', onScroll, { passive: true });
+    //     return () => window.removeEventListener('scroll', onScroll);
+    // }, []);
 
 
 

@@ -1,0 +1,113 @@
+.About{
+    width: 100vw;
+    height : 100vh;
+    color : #fff;
+}
+
+.Profile
+{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.headings
+{
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  margin-bottom: 5vh;
+}
+
+.headings h1{
+  font-weight: 900 !important;
+  font-size: 2.5vw;
+  margin-bottom: 10px;
+}
+
+.headings p{
+  font-size: 1.4vw;
+}
+
+.Content
+{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 80%;
+}
+
+.Content img
+{
+  width: 50%;
+  border: 10px solid  var(--grey_main);
+  border-radius: 100%;
+}
+
+.a
+{
+  flex: 1;
+  display: flex;
+  flex-direction : column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.a h2{
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6vw;
+  margin-bottom: 15px;
+}
+
+.a p
+{
+  margin: 0;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1.3vw;
+  line-height: 1.2;
+  letter-spacing : 0.5px;
+}
+
+.b
+{
+  flex: 1;
+}
+
+.c
+{
+  display: flex;
+  flex-direction : column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1;
+  text-align: left;
+  width : 10vw;
+}
+
+.c span
+{
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1.3vw;
+  font-weight: 500;
+  margin-left: 7px;
+}
+
+.c h2{
+  margin: 0;
+  margin-bottom: 15px;
+  font-size: 1.6vw;
+  font-family: 'Roboto', sans-serif;
+}
+
+.c h6
+{
+  font-family: 'Roboto', sans-serif;
+  margin : 0;
+  margin-bottom : 12px;
+  font-size: 1.3vw;
+}
+

@@ -54,7 +54,7 @@ function Home() {
   },[]);
 
   return (
-    <section id="sectionone" className="screen">
+    <section id="sectionone" data-scroll-section className="screen">
       <div id="scene">
         <div data-depth="0.1" className="bg">
           <img src={bgImg} alt="" />
@@ -117,10 +117,6 @@ function Home() {
                   </div>
                   <span>Steam</span>
               </div></a>
-            </div>
-            <div className="nextButtons">
-              <Button title="CONTACT ME" icon="fa-brands fa-rocketchat"/>
-              <Button title="KNOW MORE" icon="fa-solid fa-address-card"/>
             </div>
           </div>
     </section>
