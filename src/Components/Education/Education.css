@@ -1,0 +1,157 @@
+.education a{
+    text-decoration:none;
+}
+
+.education .title {
+    font-size: 2.75rem;
+    font-weight: 800;
+    text-align: center;
+    color: #fff;
+    text-transform: capitalize;
+    letter-spacing: 2.5px;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.4;
+    margin-top:0;
+    margin-bottom: 50px;
+}
+
+.education h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-top: 15px;
+}
+
+.education h5{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 6px;
+}
+
+.education .vertical-timeline-element-content {
+    box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25),0 0.4em 1.25em 0 rgba(0, 0, 0, 0.15) !important;
+    padding: 2em 3em !important;
+}
+
+.education .date {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+}
+
+.education #description {
+    font-size: 1rem;
+    font-family: 'League Spartan', sans-serif;
+    text-align: left;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+    margin: 1.5em 0 2em 0;
+}
+
+.education .button {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+}
+
+.education .workButton {
+background-color: #06d6a0;
+}
+
+.education .workButton:hover {
+background-color: #0ac593;
+}
+
+.education .schoolButton {
+background-color: #f9c74f;
+}
+
+.education .schoolButton:hover {
+background-color: #f3bc3c;
+}
+
+.education .card {
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    height: 100%;
+}
+  
+.education .card:hover {
+    transform: translate3d(0, -0.3rem, 0) scale(1.02);
+    transition: all 0.3s ease-in-out;
+}
+
+.education .card .one {
+    height: 175px;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+.education .one img {
+    height: 100%;
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+}
+
+.education .image_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+}
+
+.education .image_overlay_blur {
+    backdrop-filter: blur(5px);
+}
+
+.education .image_overlay > * {
+    transform: translateY(20px);
+    transition: transform 0.25s ease;
+}
+
+.education .image_overlay:hover {
+    opacity: 1;
+}
+
+.education .image_overlay:hover > * {
+    transform: translateY(0);
+}
+
+.education .card .two {
+    width: 100%;
+}
+
+
+.education .bounce-in .gallery-item-image{
+    transform: scale(1);
+    filter: none;
+}
+.education  .gallery-item-image {
+    background-size: cover;
+    background-position: center;
+    transform-origin: center;
+    width: 100%;
+    height: 100%;
+    will-change: transform;
+    transform: scale(0.7);
+    transition: all 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+    filter: grayscale(100%) sepia(20%) brightness(80%);
+}

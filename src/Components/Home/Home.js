@@ -5,13 +5,13 @@ import 'font-awesome/css/font-awesome.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import React, { useEffect }  from 'react'
 import "./Home.css"
+import gsap from "gsap";
+import SplitText from "../../utils/Split3.min.js";
 import bgImg from "../../images/background.png"
 import rockImg from "../../images/rock.png";
 import earthImg from "../../images/earth.png";
 import midImg from "../../images/mid.png";
 import foreImg from "../../images/foreground.png";;
-
-
 function Home() {
 
   const el = React.useRef(null);
@@ -53,6 +53,25 @@ function Home() {
     var parallaxInstance = new Parallax(scene); 
   },[]);
 
+  useEffect(()=>{
+    const split = new SplitText("#main_first_page_textt",{
+      type: "lines",
+      linesClass : "lineChildren",
+    });
+    const splitParent = new SplitText("#main_first_page_text", {
+      type: "lines",
+      linesClass: "lineParent",
+    });
+    gsap.to(split.lines,{
+      duration:1,
+      y:0,
+      opacity : 1,
+      stagger:0.1,
+      ease:"power2",
+    });
+},[]);
+
+
   return (
     <section id="sectionone" data-scroll-section className="screen">
       <div id="scene">
@@ -68,7 +87,7 @@ function Home() {
         <div data-depth="0.1" className="text">
           <div className="left"> 
             <h2 className="firsth2">Hey,i am</h2>
-            <h1>ANIRUDH VADERA </h1>
+            <h1 id="main_first_page_text">ANIRUDH VADERA </h1>
             <h2>I am a <span className="toChange" ref={el}> </span></h2>
           </div>
         </div>

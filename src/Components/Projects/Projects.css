@@ -27,7 +27,7 @@
 .gallery {
     height: 80vh;
     padding: 10vh 0;
-    width: 400vw;
+    width: 400vw !important;
     display: flex;
     flex-wrap: nowrap;
 }

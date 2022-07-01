@@ -39,5 +39,37 @@ export default function useLocoScroll(start) {
     //     }
     // });
 
+    locoScroll.on("scroll", () => {
+      ScrollTrigger.update();
+    });
+
+    ScrollTrigger.scrollerProxy(scrollEl, {
+      scrollTop(value) {
+        if (locoScroll) {
+          return arguments.length
+            ? locoScroll.scrollTo(value, 0, 0)
+            : locoScroll.scroll.instance.scroll.y;
+        }
+        return null;
+      },
+      scrollLeft(value) {
+        if (locoScroll) {
+          return arguments.length
+            ? locoScroll.scrollTo(value, 0, 0)
+            : locoScroll.scroll.instance.scroll.x;
+        }
+        return null;
+      },
+    });
+
+    const lsUpdate = () => {
+      if (locoScroll) {
+        locoScroll.update();
+      }
+    };
+
+    ScrollTrigger.addEventListener("refresh", lsUpdate);
+    ScrollTrigger.refresh();
+
   }, [start]);
 }

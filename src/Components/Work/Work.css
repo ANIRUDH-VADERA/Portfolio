@@ -34,29 +34,43 @@
     object-fit: cover;
 }
 
+  
+.head-text span {
+    color: var(--grey_main);
+}
+
 .head-text {
     font-size: 2.75rem;
     font-weight: 800;
     text-align: center;
     color: #fff;
     text-transform: capitalize;
-}
-
-  
-.head-text span {
-    color: var(--grey_main);
+    /* letter-spacing: 2.5px; */
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.4;
 }
 
 .p-text {
     font-size: 0.8rem;
+    font-family: 'League Spartan', sans-serif;
     text-align: left;
-    color: var(--grey_main);
+    color: #fff;
+    letter-spacing: 0.6px;
     line-height: 1.5;
 }
 
 .bold-text {
+    font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     font-weight: 800;
-    color: var(--grey_main);
+    color: #fff;
     text-align: left;
+}
+
+#Work img {
+    clip-path: inset(100% 0% 0% 0%);
+    transition: clip-path 1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+#Work img.is-reveal {
+    clip-path: inset(0% 0% 0% 0%);
 }

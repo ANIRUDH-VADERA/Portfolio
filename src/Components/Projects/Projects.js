@@ -10,6 +10,11 @@ import projectImage7 from "../../images/projects_chat.png";
 import projectImage8 from "../../images/projects_ch_ext.png";
 import projectImage9 from "../../images/projects_appa.png";
 import projectImage10 from "../../images/projects_threejs.png";
+import {gsap} from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import cn from "classnames";
+import useOnScreen from "../../hooks/useOnScreen";
+
 
 const images = [
     {
@@ -82,23 +87,36 @@ const images = [
     updateActiveImage,
     index,
   }) {
+
+    const ref = useRef(null);
+
+    const onScreen = useOnScreen(ref, 0.5);
+    
+    useEffect(() => {
+      if (onScreen) {
+        updateActiveImage(index);
+      }
+    }, [onScreen, index]);
+
     return (
       <div
-        className={"gallery-item-wrapper"}>
-        <div></div>
-        <div className={"gallery-item"}>
-          <div className="gallery-item-info">
-            <h1 className="gallery-info-title">{title}</h1>
-            <h2 className="gallery-info-subtitle">{subtitle}</h2>
-            {/* <p className="gallery-info-category">{category}</p> */}
+      className={cn("gallery-item-wrapper", { "is-reveal": onScreen })}
+      ref={ref}
+      >
+          <div></div>
+          <div className={"gallery-item"}>
+            <div className="gallery-item-info">
+              <h1 className="gallery-info-title">{title}</h1>
+              <h2 className="gallery-info-subtitle">{subtitle}</h2>
+              {/* <p className="gallery-info-category">{category}</p> */}
+            </div>
+            <div
+              className="gallery-item-image"
+              style={{ backgroundImage: `url(${src})`}}
+            ></div>
           </div>
-          <div
-            className="gallery-item-image"
-            style={{ backgroundImage: `url(${src})`}}
-          ></div>
+          <div></div>
         </div>
-        <div></div>
-      </div>
     );
   }
 
@@ -112,6 +130,29 @@ function Projects() {
     const handleUpdateActiveImage = (index) => {
         setActiveImage(index + 1);
     };
+
+
+    useEffect(() => {
+      // This does not seem to work without a settimeout
+      setTimeout(() => {
+        let sections = gsap.utils.toArray(".gallery-item-wrapper");
+        gsap.to(sections, {
+          xPercent: -100 * (sections.length - 1),
+          ease: "none",
+          scrollTrigger: {
+            start: "top top",
+            trigger: ref.current,
+            scroller: "#main-container",
+            pin: true,
+            scrub: 0.5,
+            snap: 1 / (sections.length - 1),
+            end: () => `+=${ref.current.offsetWidth}`,
+          },
+        });
+        ScrollTrigger.refresh();
+      });
+    }, []);
+
 
 
     return (
@@ -135,4 +176,4 @@ function Projects() {
     )
 }
 
-export default Projects
+export default Projects;
