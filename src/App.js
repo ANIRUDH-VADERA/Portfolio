@@ -10,6 +10,8 @@ import Work from "./Components/Work/Work.js";
 import CustomCursor from "./CustomCursor";
 import Loader from "./Components/Loader/Loader.js";
 import useLocoScroll from "./hooks/useLocoScroll.js";
+import Experience from "./Components/Experience/Experience.js";
+import Footer from './Components/Footer/Footer.js';
 
 function App() {
 
@@ -34,14 +36,18 @@ function App() {
       {preLoader ?
         <Loader />
         :
+        <div>
         <div className="App main-container" data-scroll-container id="main-container">
           {/* <Navbar setDown={setDown} preLoader={preLoader}/> */}
           <Home />
           <About />
           <Work />
           <Education />
+          <Experience />
           <Skills />
-          {/* <Projects /> */}
+          <Projects />
+          <Footer />
+        </div>
         </div>
       }
 

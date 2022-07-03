@@ -7,3 +7,8 @@ html{
     font-family: Alphacentauri;
     src: url("./fonts/Alphacentauri-MVY4p.ttf");
 }
+
+#main-container{
+    position: relative;
+    z-index: 1;
+}

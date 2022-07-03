@@ -1,0 +1,9 @@
+.footer{
+    height: 50vh;
+    width: 100vw;
+    background-color: red !important;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    z-index: -100 !important;
+}

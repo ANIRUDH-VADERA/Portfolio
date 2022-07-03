@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useRef } from 'react';
 import "./Skills.css"
 import { motion } from 'framer-motion';
 import icon1 from "../../images/icons_html_light.svg";
@@ -17,8 +17,14 @@ import icon13 from "../../images/icons_mat_light.svg";
 import icon14 from "../../images/icons_c_light.svg";
 import icon15 from "../../images/icons_java_light.svg";
 import icon16 from "../../images/icons_node_light.svg";
+import cn from "classnames";
+import useOnScreen from "../../hooks/useOnScreen";
 
 const Skills = () => {
+
+  const ref = useRef(null);
+  const onScreen = useOnScreen(ref, 0.5);
+
     const skills = [
         {
             name: "HTML",
@@ -103,7 +109,7 @@ const Skills = () => {
     ]  
     return (
       <section className="skills" id="Skills" data-scroll-section>
-        <h2 className="head-text">Skills & Experience</h2>
+        <h2 className="head-text">Skills</h2>
         <div className="se_container">
           <div className="app__skills-container">
             <motion.div className="app__skills-list">
@@ -111,8 +117,9 @@ const Skills = () => {
                 <motion.div
                   whileInView={{ opacity: [0, 1] }}
                   transition={{ duration: 0.5 }}
-                  className="app__skills-item app__flex"
+                  className={cn("app__skills-item app__flex", { "is-reveal": onScreen })}
                   key={skill.name}
+                  ref={ref}
                 >
                   <div
                     className="app__flex"
@@ -124,49 +131,6 @@ const Skills = () => {
                 </motion.div>
               ))}
             </motion.div>
-          </div>
-          <div className="experience">
-              <div className="timeline">
-                <div className="line"></div>
-                <div className="part">
-                  <div className="bead"></div>
-                  <div className="content">
-                    <h2>APPLE DEVELOPERS GROUP | CORE MEMBER</h2>
-                    <h3>DOMAIN : FRONTEND DEVELOPER</h3>
-                    <h3>DEC 2020 - PRESENT | VIT,VELLORE</h3>
-                    <p>
-                      CONDUCTED A REACT SESSION
-                      CONTRIBUTED IN RECRUITMENTS WEBSITE DEVELOPMENT
-                      CONTRIBUTED IN ADG'S OFFICIAL WEBSITE
-                      MADE THE ADG'S LINK TREE WEBSITE
-                      CURRENTLY WORKING ON A CSS GENERATOR CHROME EXTENSION
-                    </p>
-                  </div>
-                </div>
-                <div className="part">
-                  <div className="bead"></div>
-                  <div className="content">
-                    <h2>TECHNOLOGY AND GAMING CLUB | CORE MEMBER</h2>
-                    <h3>DOMAIN : WEB DEVELOPMENT AND GAME MANAGEMENT</h3>
-                    <h3>DEC 2020 - DEC 2021 | VIT,VELLORE</h3>
-                    <p>
-                    CONTRIBUTED IN INTRA CLUB GAMING TOURNAMENT
-                    HOSTED A SERVER FOR CSGO(COUNTER STRIKE GLOBAL OFFENSIVE)
-                    </p>
-                  </div>
-                </div>
-                <div className="part">
-                  <div className="bead"></div>
-                  <div className="content">
-                    <h2>SKILLSHIP VELLORE | CORE MEMBER</h2>
-                    <h3>DOMAIN : WEB DEVELOPMENT</h3>
-                    <h3>DEC 2020 - PRESENT | VIT,VELLORE</h3>
-                    <p>
-                       BASICS OF WEB DEVELOPMENT
-                    </p>
-                  </div>
-                </div>
-              </div>
           </div>
         </div>
       </section>

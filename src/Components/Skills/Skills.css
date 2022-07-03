@@ -17,7 +17,8 @@
     flex-direction: column;
 }
 .app__skills-container {
-    width: 50%;
+    width: 80%;
+    padding-left: 10px;
     margin-top: 3rem;
     display: flex;
     flex-direction: row;
@@ -31,7 +32,17 @@
     align-items: flex-start;
 }
 
+.skills .is-reveal{
+    transform: scale(1);
+    filter: none;
+    transition: all 0.3s ease-in-out;
+}
+
 .app__skills-item {
+    will-change: transform;
+    transform: scale(0.7);
+    transition: all 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+    filter: grayscale(100%) sepia(20%) brightness(80%);
     flex-direction: column;
     display: flex;
     align-items: center;
@@ -46,6 +57,7 @@
     justify-content: center;
     align-items: center;
     background-color: #fef4f5;
+    transition: all 0.3s ease-in-out;
 }
 .app__skills-item div img {
     width: 60%;
@@ -53,84 +65,11 @@
 }
 .app__skills-item div:hover {
     box-shadow: 0 0 25px #fef4f5 ;
+    transform: scale(1.06);
+    transition: all 0.3s ease-in-out;
 }
 
 .app__skills-item p {
     font-weight: 500;
     margin-top: 0.5rem;
 }
-
-.timeline{
-    position: relative;
-    min-height: 150px;
-}
-
-.line{
-    position : absolute;
-    z-index: 2;
-    left: calc(50% -1px);
-    width: 2px;
-    top: 50px;
-    bottom: -50px;
-    background-color: #fff;
-    display: none;
-}
-
-.line:before,.line:after{
-    position : absolute;
-    display: block;
-    content: "";
-    height : 1rem;
-    width : 1rem;
-    border-radius: 50%;
-    background-color: #fff;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-
-.line:after{
-    bottom: 0;
-
-}
-
-.part{
-    display:flex;
-    opacity: 0;
-    transform: translateX(-100%);
-    transition: 600ms ease-in-out;
-    position: relative;
-    z-index: 1;
-    margin: 50px 0;
-    padding : 1rem;
-    border-radius: 1rem;
-    align-items: center;
-    min-height: 300px;
-}
-
-.part:nth-child(odd){
-    flex-direction: row-reverse;
-    transform: translateX(100%);
-}
-
-.bead{
-    position : absolute;
-    display: block;
-    height: 1rem;
-    width: 1rem;
-    border-radius: 50%;
-    background-color: #fff;
-    left: 50%;
-    top: 20%;
-    transform: translateX(-50%);
-}
-
-.content {
-    width : calc(50% - 2rem);
-}
-
-.show-me:nth-child(n){
-    transform: none;
-    opacity: 1;
-}
-

@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import LocomotiveScroll from "locomotive-scroll";
 import "locomotive-scroll/src/locomotive-scroll.scss";
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
 export default function useLocoScroll(start) {
   useEffect(() => {
@@ -19,48 +19,29 @@ export default function useLocoScroll(start) {
       multiplier: 1,
       class: "is-reveal",
     });
-    // const nav = document.querySelector(".navbar");
-    // const NavTop = nav.offsetTop;
-    // const headerLogo = document.querySelector(".headerLogo");
-    // const navbarHeadingMain = document.querySelector(".navbarHeadingMain");
-    // locoScroll.on("scroll",(instance)=>{
-    //     if(instance.scroll.y >= NavTop){
-    //         // props.setDown(true);
-    //         document.body.style.paddingTop = nav.offsetHeight + "px";
-    //         document.body.classList.add("fixed-nav");
-    //         headerLogo.classList.add("none1");
-    //         navbarHeadingMain.classList.add("none1");
-    //       }else {
-    //         // props.setDown(false);
-    //         document.body.style.paddingTop = 0;
-    //         document.body.classList.remove("fixed-nav");
-    //         headerLogo.classList.remove("none1");
-    //         navbarHeadingMain.classList.remove("none1");
-    //     }
+
+    // locoScroll.on("scroll", () => {
+    //   ScrollTrigger.update();
     // });
 
-    locoScroll.on("scroll", () => {
-      ScrollTrigger.update();
-    });
-
-    ScrollTrigger.scrollerProxy(scrollEl, {
-      scrollTop(value) {
-        if (locoScroll) {
-          return arguments.length
-            ? locoScroll.scrollTo(value, 0, 0)
-            : locoScroll.scroll.instance.scroll.y;
-        }
-        return null;
-      },
-      scrollLeft(value) {
-        if (locoScroll) {
-          return arguments.length
-            ? locoScroll.scrollTo(value, 0, 0)
-            : locoScroll.scroll.instance.scroll.x;
-        }
-        return null;
-      },
-    });
+    // ScrollTrigger.scrollerProxy(scrollEl, {
+    //   scrollTop(value) {
+    //     if (locoScroll) {
+    //       return arguments.length
+    //         ? locoScroll.scrollTo(value, 0, 0)
+    //         : locoScroll.scroll.instance.scroll.y;
+    //     }
+    //     return null;
+    //   },
+    //   scrollLeft(value) {
+    //     if (locoScroll) {
+    //       return arguments.length
+    //         ? locoScroll.scrollTo(value, 0, 0)
+    //         : locoScroll.scroll.instance.scroll.x;
+    //     }
+    //     return null;
+    //   },
+    // });
 
     const lsUpdate = () => {
       if (locoScroll) {
@@ -68,8 +49,8 @@ export default function useLocoScroll(start) {
       }
     };
 
-    ScrollTrigger.addEventListener("refresh", lsUpdate);
-    ScrollTrigger.refresh();
+    // ScrollTrigger.addEventListener("refresh", lsUpdate);
+    // ScrollTrigger.refresh();
 
   }, [start]);
 }
